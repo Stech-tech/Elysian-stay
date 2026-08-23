@@ -1,0 +1,298 @@
+/* ================================
+   ELYSIAN STAY ADMIN DASHBOARD
+   ================================ */
+
+body {
+    background: #f5f3ef;
+    color: #2f2f2f;
+    font-family: Arial, sans-serif;
+}
+
+/* Main dashboard container */
+
+.admin-section {
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px auto;
+}
+
+/* Dashboard heading */
+
+.admin-section h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 36px;
+    color: #2f2f2f;
+}
+
+.admin-section h2 {
+    margin-top: 45px;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #3d3a35;
+}
+
+/* ================================
+   ADD ROOM FORM
+   ================================ */
+
+#add-room-form {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+
+    margin-bottom: 50px;
+}
+
+#add-room-form input,
+#add-room-form textarea {
+    width: 100%;
+    padding: 13px 15px;
+
+    border: 1px solid #ddd;
+    border-radius: 8px;
+
+    font-size: 15px;
+    box-sizing: border-box;
+
+    outline: none;
+}
+
+#add-room-form textarea {
+    grid-column: 1 / -1;
+    min-height: 120px;
+    resize: vertical;
+}
+
+#add-room-form input:focus,
+#add-room-form textarea:focus {
+    border-color: #b89b5e;
+}
+
+#submit-room-btn {
+    grid-column: 1 / -1;
+
+    padding: 13px 20px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #2f2f2f;
+    color: white;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+#submit-room-btn:hover {
+    background: #b89b5e;
+}
+
+/* ================================
+   ROOM MANAGEMENT TABLE
+   ================================ */
+
+#rooms-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+
+    border-radius: 12px;
+    overflow: hidden;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+
+    margin-bottom: 50px;
+}
+
+#rooms-table thead {
+    background: #2f2f2f;
+    color: white;
+}
+
+#rooms-table th,
+#rooms-table td {
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+#rooms-table th {
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+#rooms-table td {
+    font-size: 14px;
+}
+
+#rooms-table tbody tr:hover {
+    background: #faf8f4;
+}
+
+/* Room action buttons */
+
+#rooms-table button {
+    padding: 8px 14px;
+
+    border: none;
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    margin-right: 5px;
+}
+
+#rooms-table .edit-btn {
+    background: #e7dcc5;
+    color: #4a3f2c;
+}
+
+#rooms-table .edit-btn:hover {
+    background: #d4c19b;
+}
+
+#rooms-table .delete-btn {
+    background: #f1d4d4;
+    color: #8b3030;
+}
+
+#rooms-table .delete-btn:hover {
+    background: #e5b5b5;
+}
+
+/* ================================
+   BOOKING MANAGEMENT TABLE
+   ================================ */
+
+#bookings-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+
+    border-radius: 12px;
+    overflow: hidden;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+
+    margin-bottom: 50px;
+}
+
+#bookings-table thead {
+    background: #2f2f2f;
+    color: white;
+}
+
+#bookings-table th,
+#bookings-table td {
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+#bookings-table th {
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+#bookings-table td {
+    font-size: 14px;
+}
+
+#bookings-table tbody tr:hover {
+    background: #faf8f4;
+}
+
+/* Booking delete button */
+
+#bookings-table .delete-booking-btn {
+    padding: 8px 14px;
+
+    border: none;
+    border-radius: 6px;
+
+    background: #f1d4d4;
+    color: #8b3030;
+
+    cursor: pointer;
+
+    font-size: 13px;
+    font-weight: bold;
+}
+
+#bookings-table .delete-booking-btn:hover {
+    background: #e5b5b5;
+}
+
+/* ================================
+   CONTACT MESSAGES TABLE
+   ================================ */
+
+#messages-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+
+    border-radius: 12px;
+    overflow: hidden;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+
+    margin-bottom: 50px;
+}
+
+#messages-table thead {
+    background: #2f2f2f;
+    color: white;
+}
+
+#messages-table th,
+#messages-table td {
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+#messages-table th {
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+#messages-table td {
+    font-size: 14px;
+}
+
+#messages-table tbody tr:hover {
+    background: #faf8f4;
+}
+
+/* Message delete button */
+
+#messages-table .delete-message-btn {
+    padding: 8px 14px;
+
+    border: none;
+    border-radius: 6px;
+
+    background: #f1d4d4;
+    color: #8b3030;
+
+    cursor: pointer;
+
+    font-size: 13px;
+    font-weight: bold;
+}
+
+#messages-table .delete-message-btn:hover {
+    background: #e5b5b5;
+}

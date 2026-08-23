@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elysian Stay | Book Your Stay</title>
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+     <div id="booking-success" class="booking-success">
+    <p>🎉 Booking saved successfully!</p>
+    <button id="booking-success-ok" type="button">OK</button>
+  </div>
+
+  <!-- ===== NAVBAR ===== -->
+
+  <header>
+    <nav class="navbar">
+
+      <div class="logo">
+        <h1>Elysian Stay</h1>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="rooms.html">Rooms</a></li>
+        <li><a href="booking.html">Booking</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <a href="booking.html" class="btn-book">Book Now</a>
+
+    </nav>
+  </header>
+
+
+  <!-- ===== HERO SECTION ===== -->
+
+  <section class="booking-hero">
+
+    <div class="booking-hero-content">
+      <h2>Book Your Stay</h2>
+      <p>
+        Reserve your luxury experience and create unforgettable memories.
+      </p>
+    </div>
+
+  </section>
+
+
+  <!-- ===== BOOKING SECTION ===== -->
+
+  <section class="booking-section">
+
+    
+
+    <h2>Reservation Form</h2>
+
+    <div class="booking-container">
+
+      <!-- Booking Form -->
+
+      <form class="booking-form" action="/book" method="POST">
+
+        <input
+          type="text"
+          placeholder="Full Name"
+          name="full_name"
+          required
+        >
+
+        <input
+          type="email"
+          name="email"
+          placeholder="Email Address"
+          required
+        >
+
+        <input
+          type="tel"
+          name="phone"
+          placeholder="Phone Number"
+          required
+        >
+
+        <label>Check-In Date</label>
+        <input
+          type="date"
+          name="check_in"
+          required
+        >
+
+        <label>Check-Out Date</label>
+        <input
+          type="date"
+          name="check_out"
+          required
+        >
+
+        <label>Select Room</label>
+        <select name="room_id" required>
+          <option value="">Choose a Room</option>
+          <option value="1">Deluxe Ocean Room</option>
+          <option value="7">Royal Suite</option>
+          <option value="3">Garden Villa</option>
+        </select>
+
+        <label>Number of Guests</label>
+        <select name="guests" required>
+          <option value="">Select Guests</option>
+          <option value="1">1 Guest</option>
+          <option value="2">2 Guests</option>
+          <option value="3">3 Guests</option>
+          <option value="4">4 Guests</option>
+        </select>
+
+        <textarea
+          name="special_requests"
+          rows="5"
+          placeholder="Special Requests (Optional)"
+        ></textarea>
+
+        <button type="submit" class="btn-primary">
+          Confirm Booking
+        </button>
+
+      </form>
+
+
+      <!-- Booking Information -->
+
+      <div class="booking-info">
+
+        <h3>Why Book With Us?</h3>
+
+        <div class="info-box">
+          <i class="fas fa-check-circle"></i>
+          <p>Free cancellation up to 24 hours before check-in.</p>
+        </div>
+
+        <div class="info-box">
+          <i class="fas fa-headset"></i>
+          <p>24/7 guest support and concierge services.</p>
+        </div>
+
+        <div class="info-box">
+          <i class="fas fa-lock"></i>
+          <p>Secure and protected reservation process.</p>
+        </div>
+
+        <div class="info-box">
+          <i class="fas fa-star"></i>
+          <p>Luxury amenities and unforgettable experiences.</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ===== FOOTER ===== -->
+
+  <footer>
+
+    <div class="footer-content">
+      <h3>Elysian Stay</h3>
+      <p>Luxury hospitality redefined.</p>
+    </div>
+
+    <div class="footer-links">
+      <a href="rooms.html">Rooms</a>
+      <a href="booking.html">Booking</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-x-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+
+    <p class="copyright">
+      © 2026 Elysian Stay. All rights reserved.
+    </p>
+
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

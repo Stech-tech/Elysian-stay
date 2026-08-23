@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Elysian Stay Admin</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="admin.css">
+
+</head>
+
+<body>
+
+    <section class="admin-section">
+        
+        <h2>Add New Room</h2>
+
+<form id="add-room-form">
+
+    <input
+        type="text"
+        id="room-name"
+        placeholder="Room Name"
+        required
+    >
+
+    <input
+        type="number"
+        id="room-price"
+        placeholder="Price"
+        required
+    >
+
+    <input
+        type="number"
+        id="room-capacity"
+        placeholder="Capacity"
+        required
+    >
+
+    <input
+        type="text"
+        id="room-image"
+        placeholder="Image Name"
+        required
+    >
+
+    <textarea
+        id="room-description"
+        placeholder="Room Description"
+        required
+    ></textarea>
+
+    <button id="submit-room-btn" type="submit">
+    Add Room
+  </button>
+
+</form>
+
+        <h1>Admin Dashboard</h1>
+
+        <table id="rooms-table">
+
+<table id="rooms-table">
+
+    <thead>
+
+        <tr>
+
+            <th>Room Name</th>
+            <th>Price</th>
+            <th>Capacity</th>
+            <th>Actions</th>
+
+        </tr>
+
+    </thead>
+
+    <tbody id="rooms-body">
+
+    </tbody>
+
+</table>
+
+<h2>Booking Management</h2>
+
+<table id="bookings-table">
+
+    <thead>
+
+        <tr>
+
+            <th>Guest</th>
+            <th>Room</th>
+            <th>Check In</th>
+            <th>Check Out</th>
+            <th>Guests</th>
+            <th>Actions</th>
+
+        </tr>
+
+    </thead>
+
+    <tbody id="bookings-body">
+
+    </tbody>
+
+</table>
+
+<h2>Contact Messages</h2>
+
+<table id="messages-table">
+
+    <thead>
+
+        <tr>
+
+            <th>Name</th>
+            <th>Email</th>
+            <th>Message</th>
+            <th>Actions</th>
+
+        </tr>
+
+    </thead>
+
+    <tbody id="messages-body">
+
+    </tbody>
+
+</table>
+
+
+</section>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
