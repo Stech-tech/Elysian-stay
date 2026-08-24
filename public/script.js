@@ -80,6 +80,38 @@ if (roomsContainer) {
 
 }
 
+// ======================
+// Booking Page
+// ======================
+
+const bookingRoomSelect = document.querySelector('select[name="room_id"]');
+
+if (bookingRoomSelect) {
+
+    async function loadBookingRooms() {
+
+        const response = await fetch("/api/rooms");
+        const rooms = await response.json();
+
+        bookingRoomSelect.innerHTML = `
+            <option value="">Choose a Room</option>
+        `;
+
+        rooms.forEach(function(room) {
+
+            bookingRoomSelect.innerHTML += `
+                <option value="${room.id}">
+                    ${room.name}
+                </option>
+            `;
+
+        });
+
+    }
+
+    loadBookingRooms();
+
+}
 
 // ======================
 // Admin Dashboard
@@ -256,7 +288,7 @@ if (roomsBody) {
 
 }
 
-// ======================
+ //======================
 // Add / Update Room Form
 // ======================
 
