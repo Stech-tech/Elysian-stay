@@ -1,4 +1,7 @@
 console.log("=== THIS IS THE SERVER.JS I AM RUNNING ===");
+
+require("dotenv").config();
+
 const express = require("express");
 const path = require("path");
  
@@ -9,7 +12,7 @@ const pool = require("./config/db");
 const app = express();
 
 
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
