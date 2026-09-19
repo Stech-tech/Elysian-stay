@@ -54,25 +54,29 @@ if (roomsContainer) {
 
         rooms.forEach(function(room) {
 
-            roomsContainer.innerHTML += `
-<div class="room-box">
+    roomsContainer.innerHTML += ` 
+<div class="room-box"> 
 
-    <img src="images/${room.image}" alt="${room.name}">
+    <img src="images/${room.image}" alt="${room.name}"> 
 
-    <div class="room-info">
+    <div class="room-info"> 
 
-        <h3>${room.name}</h3>
+        <h3>${room.name}</h3> 
 
-        <p>${room.description}</p>
+        <p>${room.description}</p> 
 
         <h4>$${room.price} / Night</h4>
 
-    </div>
+        <a href="room-details.html?id=${room.id}" class="btn-primary">
+            View Details
+        </a>
 
-</div>
+    </div> 
+
+</div> 
 `;
 
-        });
+});
 
     }
 
@@ -85,13 +89,18 @@ if (roomsContainer) {
 // ======================
 
 const bookingRoomSelect = document.querySelector('select[name="room_id"]');
+const bookingGuestsSelect = document.querySelector('select[name="guests"]');
 
-if (bookingRoomSelect) {
+if (bookingRoomSelect && bookingGuestsSelect) {
+
+    let bookingRooms = [];
 
     async function loadBookingRooms() {
 
         const response = await fetch("/api/rooms");
         const rooms = await response.json();
+
+        bookingRooms = rooms;
 
         bookingRoomSelect.innerHTML = `
             <option value="">Choose a Room</option>
@@ -108,6 +117,34 @@ if (bookingRoomSelect) {
         });
 
     }
+
+    bookingRoomSelect.addEventListener("change", function() {
+
+        const selectedRoomId = bookingRoomSelect.value;
+
+        const selectedRoom = bookingRooms.find(function(room) {
+            return room.id == selectedRoomId;
+        });
+
+        bookingGuestsSelect.innerHTML = `
+            <option value="">Select Guests</option>
+        `;
+
+        if (!selectedRoom) {
+            return;
+        }
+
+        for (let i = 1; i <= selectedRoom.capacity; i++) {
+
+            bookingGuestsSelect.innerHTML += `
+                <option value="${i}">
+                    ${i} ${i === 1 ? "Guest" : "Guests"}
+                </option>
+            `;
+
+        }
+
+    });
 
     loadBookingRooms();
 
@@ -212,15 +249,21 @@ if (roomsBody) {
 
     <td>
 
-        <button class="edit-btn" data-id="${room.id}">
-            Edit
-        </button>
+    <a 
+        href="room-details.html?id=${room.id}" 
+        class="view-btn">
+        View Details
+    </a>
 
-        <button class="delete-btn" data-id="${room.id}">
-            Delete
-        </button>
+    <button class="edit-btn" data-id="${room.id}">
+        Edit
+    </button>
 
-    </td>
+    <button class="delete-btn" data-id="${room.id}">
+        Delete
+    </button>
+
+  </td>
 
 </tr>
 `;
@@ -494,5 +537,58 @@ if (bookingSuccess) {
         }
 
     }
+
+} 
+
+// ======================
+// Room Details Page
+// ======================
+
+const detailsHeroName = document.getElementById("details-room-name");
+const detailsHeroTagline = document.getElementById("details-room-tagline");
+
+const detailsRoomName = document.getElementById("room-name");
+const detailsRoomDescription = document.getElementById("room-description");
+const detailsRoomPrice = document.getElementById("room-price");
+
+const detailsMainImage = document.getElementById("room-main-image");
+
+const detailsRoomCapacity = document.getElementById("room-capacity");
+
+if (detailsRoomName) {
+
+    const params = new URLSearchParams(window.location.search);
+
+    const roomId = params.get("id");
+
+    console.log("Selected Room ID:", roomId);
+
+    async function loadRoomDetails() {
+
+        const response = await fetch("/api/rooms");
+
+        const rooms = await response.json();
+
+        const room = rooms.find(function(room) {
+            return room.id == roomId;
+        });
+
+        console.log("Selected Room:", room);
+
+        detailsRoomName.textContent = room.name;
+        detailsRoomDescription.textContent = room.description;
+        detailsRoomPrice.textContent = `$${room.price} / Night`;
+
+        detailsRoomCapacity.textContent = room.capacity;
+
+        detailsHeroName.textContent = room.name;
+        detailsHeroTagline.textContent = room.description;
+
+        detailsMainImage.src = `images/${room.image}`;
+        detailsMainImage.alt = room.name;
+
+    }
+
+    loadRoomDetails();
 
 }
