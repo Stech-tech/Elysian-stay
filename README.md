@@ -98,6 +98,10 @@ The frontend communicates with the Express.js backend through API endpoints. Roo
 
 ![Elysian Stay Contact Page](screenshots/contact.png)
 
+### About Page
+
+![Elysian Stay About Page](screenshots/about.png)
+
 ### Admin Dashboard
 
 ![Elysian Stay Admin Dashboard](screenshots/admin.png)
