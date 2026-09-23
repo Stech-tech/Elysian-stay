@@ -84,27 +84,27 @@ The frontend communicates with the Express.js backend through API endpoints. Roo
 
 ### Home Page
 
-![Elysian Stay Home Page](screenshots/home.png)
+![Elysian Stay Home Page](screenshots/elysian-stay-home.png)
 
 ### Rooms Page
 
-![Elysian Stay Rooms Page](screenshots/rooms.png)
+![Elysian Stay Rooms Page](screenshots/elysian-stay.rooms.html.png)
 
 ### Booking Page
 
-![Elysian Stay Booking Page](screenshots/booking.png)
+![Elysian Stay Booking Page](screenshots/elysian-stay.booking.html.png)
 
 ### Contact Page
 
-![Elysian Stay Contact Page](screenshots/contact.png)
+![Elysian Stay Contact Page](screenshots/elysian-stay.contact.html.png)
 
 ### About Page
 
-![Elysian Stay About Page](screenshots/about.png)
+![Elysian Stay About Page](screenshots/elysian-stay.about.html.png)
 
 ### Admin Dashboard
 
-![Elysian Stay Admin Dashboard](screenshots/admin.png)
+![Elysian Stay Admin Dashboard](screenshots/elysian-stay.onrender.com-admin.html.png)
 
 ## Project Structure
 
